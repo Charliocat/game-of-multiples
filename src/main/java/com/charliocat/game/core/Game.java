@@ -2,27 +2,31 @@ package com.charliocat.game.core;
 
 public class Game {
 
-    private static final String WIN = "win";
-
     private final int[] gameValues;
+
+    private int currentScore;
 
     public Game(int[] gameValues) {
         this.gameValues = gameValues;
     }
 
-    public String play(int i) {
-        int score = findNumberOfMultiples(i);
-        if (score == gameValues.length)
-            return WIN;
-
-        return String.valueOf(score);
+    public int getCurrentScore() {
+        return currentScore;
     }
 
-    public int play2(int i) {
-        return findNumberOfMultiples(i);
+    public void play(int i) {
+        currentScore = calculateNumberOfMultiples(i);
     }
 
-    private int findNumberOfMultiples(int i) {
+    public boolean isRunning() {
+        return !isWon();
+    }
+
+    public boolean isWon() {
+        return currentScore == gameValues.length;
+    }
+
+    private int calculateNumberOfMultiples(int i) {
         int result = 0;
         for (int value : gameValues) {
             if (i % value == 0)
