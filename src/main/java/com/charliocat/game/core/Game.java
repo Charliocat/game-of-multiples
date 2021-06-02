@@ -10,7 +10,7 @@ public class Game {
         this.gameValues = gameValues;
     }
 
-    public String run(int i) {
+    public String play(int i) {
         int score = findNumberOfMultiples(i);
         if (score == gameValues.length)
             return WIN;
@@ -18,6 +18,9 @@ public class Game {
         return String.valueOf(score);
     }
 
+    public int play2(int i) {
+        return findNumberOfMultiples(i);
+    }
 
     private int findNumberOfMultiples(int i) {
         int result = 0;
