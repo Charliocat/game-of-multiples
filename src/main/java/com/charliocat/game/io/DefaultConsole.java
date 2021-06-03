@@ -5,6 +5,8 @@ import java.util.regex.Pattern;
 
 public class DefaultConsole implements IOConsole {
 
+    private static final String PROMPT = "Game: ";
+
     private Scanner scanner;
 
     public DefaultConsole(Scanner scanner) {
@@ -17,11 +19,13 @@ public class DefaultConsole implements IOConsole {
 
     @Override
     public void println(String text) {
+        System.out.print(PROMPT);
         System.out.println(text);
     }
 
     @Override
     public void println(int number) {
+        System.out.print(PROMPT);
         System.out.println(number);
     }
 
