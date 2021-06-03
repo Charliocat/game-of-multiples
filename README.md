@@ -7,7 +7,7 @@ The game ends when the player finds a multiple of all 3 secret numbers.
 
 ## Requirements
 - Java 8 : [JDK 8]
-- Maven 6.8 : [Maven 3.6.2]
+- Maven 3.6.2 : [Maven 3.6.2]
 
 ## Build the application
 
