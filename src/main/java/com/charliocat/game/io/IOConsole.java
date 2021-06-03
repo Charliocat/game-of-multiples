@@ -4,15 +4,15 @@ import java.util.regex.Pattern;
 
 public interface IOConsole {
 
-    void println(String text);
+    void write(String text);
 
-    void println(int number);
+    void write(int number);
 
     boolean hasNext(Pattern pattern);
 
-    String next();
+    String readNext();
 
     boolean hasNextInt();
 
-    int nextInt();
+    int readNextInt();
 }

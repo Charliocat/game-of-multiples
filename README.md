@@ -51,6 +51,7 @@ docker run --rm -it game-of-multiples:latest
      - No need of logging, persistence layer or multithreading
 - No UI interface
 - Valid input is only positive integers 
+- Generated game values are unique
 
 ## Application flow
 

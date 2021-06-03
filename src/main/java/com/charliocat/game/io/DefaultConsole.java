@@ -18,13 +18,13 @@ public class DefaultConsole implements IOConsole {
     }
 
     @Override
-    public void println(String text) {
+    public void write(String text) {
         System.out.print(PROMPT);
         System.out.println(text);
     }
 
     @Override
-    public void println(int number) {
+    public void write(int number) {
         System.out.print(PROMPT);
         System.out.println(number);
     }
@@ -35,7 +35,7 @@ public class DefaultConsole implements IOConsole {
     }
 
     @Override
-    public String next() {
+    public String readNext() {
         return scanner.next();
     }
 
@@ -45,7 +45,7 @@ public class DefaultConsole implements IOConsole {
     }
 
     @Override
-    public int nextInt() {
+    public int readNextInt() {
         return scanner.nextInt();
     }
 

@@ -3,7 +3,7 @@ package com.charliocat.game.core;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GameTest {
 
@@ -19,23 +19,21 @@ class GameTest {
     void playAndWinAGame() {
         game.play(70);
 
-        assertTrue(game.isWon());
+        assertEquals(game.getScore(), 3);
     }
 
     @Test
     void playAGameNotWinning() {
         game.play(4);
 
-        assertFalse(game.isWon());
-        assertEquals(game.getCurrentScore(), 1);
+        assertEquals(game.getScore(), 1);
     }
 
     @Test
     void playAGameWithNegativeInteger() {
         game.play(-2);
 
-        assertFalse(game.isWon());
-        assertEquals(game.getCurrentScore(), 1);
+        assertEquals(game.getScore(), 1);
     }
 
 }

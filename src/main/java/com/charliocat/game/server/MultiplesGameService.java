@@ -30,47 +30,43 @@ public class MultiplesGameService implements GameService {
 
     @Override
     public void run() {
-        console.println("Welcome to the game of multiples!");
-        console.println("Type <hint> to see the game values");
-        console.println("Type <exit> to stop playing");
-        console.println("Enter a positive integer to play");
+        console.write("Welcome to the game of multiples!");
+        console.write("Type <hint> to see the game values");
+        console.write("Type <exit> to stop playing");
+        console.write("Enter a positive integer to play");
 
-        while (isRunning()) {
+        while (true) {
             if (console.hasNext(Pattern.compile("exit"))) {
-                console.println("Thanks for playing!");
+                console.write("Thanks for playing!");
                 break;
             }
 
             if (console.hasNext(Pattern.compile("hint"))) {
-                console.println(Arrays.toString(gameValues));
-                console.next();
+                console.write(Arrays.toString(gameValues));
+                console.readNext();
                 continue;
             }
 
             if (!console.hasNextInt()) {
-                console.println("Input error. Try again.");
-                console.next();
+                console.write("Input error. Try again.");
+                console.readNext();
                 continue;
             }
 
-            int number = console.nextInt();
+            int number = console.readNextInt();
             if (number < 1) {
-                console.println("It must be positive!");
+                console.write("It must be positive!");
                 continue;
             }
 
             game.play(number);
-            if (game.isWon()) {
-                console.println(WIN);
+            if (game.getScore() == WIN_SCORE) {
+                console.write(WIN);
                 break;
             }
 
-            console.println(game.getCurrentScore());
+            console.write(game.getScore());
         }
-    }
-
-    private boolean isRunning() {
-        return game.getCurrentScore() < WIN_SCORE;
     }
 
     public static class Builder {

@@ -4,22 +4,18 @@ public class Game {
 
     private final int[] gameValues;
 
-    private int currentScore;
+    private int score;
 
     public Game(int[] gameValues) {
         this.gameValues = gameValues;
     }
 
-    public int getCurrentScore() {
-        return currentScore;
+    public int getScore() {
+        return score;
     }
 
     public void play(int i) {
-        currentScore = calculateNumberOfMultiples(i);
-    }
-
-    public boolean isWon() {
-        return currentScore == gameValues.length;
+        score = calculateNumberOfMultiples(i);
     }
 
     private int calculateNumberOfMultiples(int i) {
