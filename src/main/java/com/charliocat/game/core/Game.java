@@ -18,10 +18,6 @@ public class Game {
         currentScore = calculateNumberOfMultiples(i);
     }
 
-    public boolean isRunning() {
-        return !isWon();
-    }
-
     public boolean isWon() {
         return currentScore == gameValues.length;
     }
