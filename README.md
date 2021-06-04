@@ -57,7 +57,8 @@ docker run --rm -it game-of-multiples:latest
 
 From top to down:
 - Main starts the game
-- MultiplesGameService and validates user input & game output
+- MultiplesGameService handles input from user using a Console.
+- GameEngine takes responsibility on the game flow.
 - GameInitializer generates the random values
 - Game calculates the multiples from user input
 - Console reads and writes to user terminal
@@ -77,10 +78,9 @@ From top to down:
 - Improve the console and user interaction
     - Use external libraries for it.
 - Improve test coverage
-- Refactor MultiplesGameService class
 - Improve code robustness:
     - Better input validation
-    - Improve error & exception handling.
+    - Improve error & exception handling (log handling). 
 
 ## Sample:
 
