@@ -1,7 +1,6 @@
 package com.charliocat.game.io;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class DefaultConsole implements IOConsole {
 
@@ -24,29 +23,8 @@ public class DefaultConsole implements IOConsole {
     }
 
     @Override
-    public void write(int number) {
-        System.out.print(PROMPT);
-        System.out.println(number);
-    }
-
-    @Override
-    public boolean hasNext(Pattern pattern) {
-        return scanner.hasNext(pattern);
-    }
-
-    @Override
     public String readNext() {
         return scanner.next();
-    }
-
-    @Override
-    public boolean hasNextInt() {
-        return scanner.hasNextInt();
-    }
-
-    @Override
-    public int readNextInt() {
-        return scanner.nextInt();
     }
 
 }
